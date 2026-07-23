@@ -1,0 +1,43 @@
+# Check HDFS
+
+hdfs dfs -ls /
+
+# Create directory
+
+hdfs dfs -mkdir /tmp
+
+# Create Power BI folder
+
+hdfs dfs -mkdir /tmp/powerbi_500k
+
+# List Hive Warehouse
+
+hdfs dfs -ls /user/hive/warehouse
+
+# List Smart Agriculture Database
+
+hdfs dfs -ls /user/hive/warehouse/smart_agriculture.db
+
+# Copy exported tables
+
+hdfs dfs -ls /tmp/powerbi_500k
+
+# Download exported tables
+
+hdfs dfs -get /tmp/powerbi_500k ~/powerbi_exports_500k
+
+# Check exported folders
+
+hdfs dfs -ls /tmp/powerbi_500k
+
+# View files
+
+hdfs dfs -find /tmp/powerbi_500k
+
+# Remove folder (if needed)
+
+hdfs dfs -rm -r /tmp/powerbi_500k
+
+# Check HDFS health
+
+hdfs dfsadmin -report
